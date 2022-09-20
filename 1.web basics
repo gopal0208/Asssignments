@@ -1,0 +1,84 @@
+HTTP:
+    It stands for HyperText Transfer Protocol.
+
+    All the communication between clients and server is done by requests and responses.
+
+    It is stateless as every request is independent of each other.
+
+HTTPS:
+    It stands for Hyper Text Transfer protocol secure, the difference between Http and Https is
+    that  https encrypts data which is being transferred or moving between client and server.
+
+HTTP methods:-
+    GET:- It is used to collect data from the server that is being stored in it.
+
+    POST:- It is used to submit data to the server.
+
+    PUT:- It is used to update data that is already there on the server.
+
+    DELETE:- It is used to delete data from the server.
+    etc. 
+
+HTTP header fields:-
+    Every http request/response has some header file and body associated with it. The header
+    contains information like what http method is used , what path is associated and the protocol
+    used during communication.
+
+    The response body includes information about server,set cookie, content-type(image,JSON,text),
+    content-length, date ,etc.
+
+    The request body includes information about cookies, content-type,content-length,Authorization
+    (access code),user-agent(long string that contains information about the software user is
+    using),referrer(information about referring site),etc.
+
+HTTP status code:-
+    It ranges from 100 to 599.
+    1xx: It represents informational status like the receipt of a request and its processing.
+    2xx: It represents success status.
+    3xx: It represents redirection.
+    4xx: It represents client error.
+    5xx: It represents server error.
+
+
+Internet:-
+    It is network of network in which various nodes are connected to each other forming a net
+    like structure that helps in communication between two or more nodes. Its idea first comes
+    from ARPANET when the concept of decentralized data came into existence.
+
+Client Server Architecture:-
+    It is a distributed architecture. There are various nodes on the internet, some acts as client
+    another acts as a server. The client requests for the service and the server gives the service      by responding.
+
+Peer to Peer Network:-
+    In this network every node act as peer, these peer can be seeder or leecher and that 
+    totally depends whether the peer is uploading or downloading data.
+
+Internet Protocol:-
+    Every device that is connected to the internet has an IP address assigned to it. This IP   address is assigned by an internet service provider. Every node in the network communicates using these IP addresses. And switches and routers in the network are responsible for selecting paths for packet transfer.
+
+IPv4:-
+    IP version four addresses are 32-bit integers which are expressed in decimal notation.
+    Ex- 192.0.1.126
+    Due to the limit to the number of devices being connected to the internet. IPv6 came into existence.
+
+IPv6:-
+    IP version six addresses are 128-bit integers which are expressed in hexadecimal notation.
+    Ex- 2345:0425:2CA1:0000:0000:0567:5673:23b5.
+    It overcomes the limitations of IPv4.
+
+Public IP:-
+    Global IP addresses that are on the internet are called public IP addresses.
+
+Private IP:-
+    The IP addresses that are inside a network like home network or LAN are known as private IP.
+
+Domain Name Servers:-
+    It is a computer server that contains a database of many IP addresses and their associated domain names.
+It is used to translate domain name into IP address, so that device knows which IP address to connect to. And it is much easier to remember domain names as compared to IP addresses.
+
+TCP:-
+    It stands for transmission control protocol. This is responsible for breaking data into packets and those packets have a header on it .These headers contain information about packets. After receiving packets at the other end TCP reassembles the packet to form complete data.
+
+APIs:-
+    It stands for Application Programming Interface. API is responsible for machine to machine interaction. Most of the time the API client gets a response in the form of JSON or XML. Both the client and the server need to agree on the structure and representation of the data. And the API documentation contains the information about the data format from which both client and server refer to.
+Most API use HTTP as a communication protocol.
