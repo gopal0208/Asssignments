@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>
+        Form
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="form">
+        <h2>Sign Up</h2>
+        <div class="ele">
+            <label for="username">Username:</label>
+            <br><input type="text" id="username" name="name">
+            <div class="err" id="nameError"></div>
+        </div>
+        <div class="ele">
+            <label for="email">Email:</label>
+            <br><input type="text" name="email" id="email">
+            <div class="err" id="emailError"></div>
+        </div>
+        <div class="ele">
+            <label for="password">Password:</label>
+            <br><input type="password" id="password" name="password">
+            <div class="err" id="passError"></div>
+        </div>
+        <div class="ele">
+            <label for="cnfmPsw">Confirm Password:</label>
+            <br><input type="password" id="cnfmPsw" name="cnfwPsw" placeholder="Re-enter your password">
+            <div class="err" id="cnfError"></div>
+        </div>
+        <div class="ele">
+            <br><input type="submit" id="submit" value="SIGN UP">
+        </div>
+    </div>
+    <script src="jquery-3.6.1.js"></script>
+    <script src="formscript.js"></script>
+</body>
+
+</html>
