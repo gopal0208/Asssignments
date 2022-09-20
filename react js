@@ -1,0 +1,140 @@
+What is react js?
+-It is a javaScript library.
+-It is used for building user interfaces.
+-It is built by facebook.
+-It is used to build single-page applications.
+
+Rendering Elements in the DOM
+-Rendering means displaying.
+-Element is something that we see on screen.
+-React elements are plain objects.
+-React DOM updates DOM to match the react elements.
+
+If we want to render something in <div> somewhere in the HTML. We will have to get its id. And we call that root DOM node because everything inside it will be managed by React DOM. To render a react element, we have to pass the DOM element to ReactDOM.createRoot(), then react element is passed to render().
+            
+            Ex-
+                <div id=”root”></div>
+                const ele=ReactDOM.createRoot(
+                    document.getElementById(‘root’));
+                const x=<h1>Learning React</h1>;
+                ele.render(x);
+
+-React elements are immutable meaning we can’t change its attributes.
+-So the only way to update the UI is to create a new element and pass it to render().
+
+How does react render and Update the UI?
+-To render , there must be a root DOM node and everything inside it will be managed by React DOM.
+-Update occurs whenever there is a state change.
+-So, the pages update as the state updates.
+-React maintains a virtual DOM and it periodically compares it with the actual DOM and
+ Then apply the changes.
+-React re-renders the component whenever the component state or props are changed and that’s how we see updated UI.
+-React also has a forceUpdate() method by using that we can force the react component to re-render.
+-Another method is setstate().
+
+What are React components?
+-React components are functions that return HTML elements.
+-They are reusable.
+-They are of two types :-
+ i> Class components
+ ii>Function components
+
+-Whenever we have to create a React component then it must start with an uppercase letter.
+-All react components must act like pure functions with respect to their props.
+
+Function vs. Class components
+Function Components:- They are simply JavaScript functions and are easy to use as compared to Class components.
+
+Syntax:-  function FuncName(){
+          // some statement
+}
+
+Ex- 
+<div id=”root”></div>
+
+import React from ‘react’;
+Import ReactDOM from ‘react-dom/client’;
+
+function FirstProgram(){
+    return <h1> First React Function </h1>;
+}
+
+const  root= ReactDOM.createRoot(document.getElementById(‘root’));
+root.render(<FirstProgram />)
+
+Class Components:- A class component uses class instead of function and is complex as compared to function component. It must include the extends React.Component statement and that creates an inheritance to React.Component so that our component will get access to React.Component’s function.
+
+Syntax:- class ClassName extends React.Component{
+    //data members
+    render(){
+    //some statement
+}
+}
+
+What are props?
+-Props are arguments passed into React Components and are passed to components via HTML attributes.
+-It stands for properties.
+Ex- 
+
+<div id=”root”></div>
+
+function Person(props){
+    return <h1> Person name: { props.name }</h1> ;
+}
+const ele=<Person name=”Gopal” />;
+const root= ReactDOM.createRoot(document.getElementById(‘root’));
+root.render(ele);
+
+
+What is state in react?
+-Every React components has a built-in state object. This is where we store property values that belongs to the component.
+-Whenever the state object changes, the component re-renders.
+-The state object is initialized in the constructor.
+-The state object can contain as many properties as we want.
+
+Ex- 
+    Class Person extends React.Component{
+        constructor(props){
+        super(props);
+        this.state={
+        name:”Gopal”,
+        YOB:”2001”
+};
+}
+render()(
+    // some statement
+);
+}
+}
+
+Props vs. State
+   -Props are immutable while State is mutable.
+   -It allows us to pass data from one to another component while state holds information about the component.
+-Props make components reusable while state cannot.
+-Props are external and controlled by whatever renders the component while state is internal and controlled by the React component itself.
+
+Default props and type checking prop types.
+ It is a React component property that allows us to set default values for the props argument. It can be defined as a property on the component class itself, to set the default props for the class.
+
+Type Checking prop types:-
+    PropTypes exports a range of validators that can be used to make sure the data received is valid. To run type checking on the props for a component, we can assign the special propTypes property.
+
+Handling events in React
+-React events name should be came case rather than lower case.
+-Function is passed as the event handler rather than a string for JSX.
+
+Ex-
+<button onClick={myFunct}>Example</button>
+
+-We cannot return false to prevent default behavior in React. So for this preventDefault is called explicitly.
+
+Lifecycle methods of class components
+ Life cycle methods in a class component allow us to run code at particular points in the process.
+So by this it can be determined when different methods are invoked.It is series of methods that are invoked in different stages of the component’s existence.
+
+Some of the stages of component are as follows:-
+    Initialization-  At this stage the component is constructed with props and default state.
+    Mounting- At this stage, rendering of JSX occurs.
+    Updating- Here the state of a component is updated.
+    Unmounting- It is the final stage of component lifecycle where the component is removed from the page.
+
