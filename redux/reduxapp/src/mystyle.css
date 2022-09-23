@@ -1,0 +1,19 @@
+.ele {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .profile {
+    margin-top: 20px;
+    position: relative;
+  }
+  
+  img {
+    position: relative;
+    height: 250px;
+  }
+  
+  .title {
+    font-weight: bold;
+  }
+  
