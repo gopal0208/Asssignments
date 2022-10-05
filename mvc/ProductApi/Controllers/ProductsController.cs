@@ -64,4 +64,16 @@ public class ProductsController : ControllerBase
         }
         return Ok(true);
     }
+    
+    [HttpGet("price")]
+    public IActionResult getByPrice(int min,int max){
+        var prod = this._DBContext.Products.Where(o=>(o.Price>=min && o.Price<=max));
+        return Ok(prod);
+    }
+
+    [HttpGet("brand/{brName}")]
+    public IActionResult getByBrand(string brName){
+        var prod= this._DBContext.Products.Where(o=>o.Brand==brName);
+        return Ok(prod);
+    }
 }
