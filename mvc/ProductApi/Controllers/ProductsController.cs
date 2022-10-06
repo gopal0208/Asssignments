@@ -21,18 +21,18 @@ public class ProductsController : ControllerBase
         return Ok(prod);
     }
 
-    [HttpGet("GetbyCode/(code)")]
-    public IActionResult GetbyCode(int code)
+    [HttpGet("GetbyId/(id)")]
+    public IActionResult GetbyId(int id)
     {
-        var prod=this._DBContext.Products.FirstOrDefault(o=>o.Id==code);
+        var prod=this._DBContext.Products.FirstOrDefault(o=>o.Id==id);
         return Ok(prod);
     }
 
     
-    [HttpDelete("Remove/(code)")]
-    public IActionResult Remove(int code)
+    [HttpDelete("Remove/(id)")]
+    public IActionResult Remove(int id)
     {
-        var prod=this._DBContext.Products.FirstOrDefault(o=>o.Id==code);
+        var prod=this._DBContext.Products.FirstOrDefault(o=>o.Id==id);
         if(prod!=null){
             this._DBContext.Remove(prod);
             this._DBContext.SaveChanges();
@@ -64,16 +64,17 @@ public class ProductsController : ControllerBase
         }
         return Ok(true);
     }
-    
-    [HttpGet("price")]
-    public IActionResult getByPrice(int min,int max){
-        var prod = this._DBContext.Products.Where(o=>(o.Price>=min && o.Price<=max));
+
+    [HttpGet("GetByPrice/(minimumPrice,maximumPrice)")]
+    public IActionResult getByPrice(int mininmumPrice,int maximumPrice){
+        var prod = this._DBContext.Products.Where(o=>(o.Price>=mininmumPrice && o.Price<=maximumPrice));
         return Ok(prod);
     }
 
-    [HttpGet("brand/{brName}")]
-    public IActionResult getByBrand(string brName){
-        var prod= this._DBContext.Products.Where(o=>o.Brand==brName);
+    [HttpGet("GetBybrand/(brandName)")]
+    public IActionResult getByBrand(string brandName){
+        var prod= this._DBContext.Products.Where(o=>o.Brand==brandName);
         return Ok(prod);
     }
+
 }
