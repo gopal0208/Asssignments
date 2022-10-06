@@ -21,18 +21,18 @@ public class ImagesController : ControllerBase
         return Ok(prod);
     }
 
-    [HttpGet("GetbyCode/(code)")]
-    public IActionResult GetbyCode(int code)
+    [HttpGet("GetbyId/(id)")]
+    public IActionResult GetbyId(int id)
     {
-        var prod=this._DBContext.Images.FirstOrDefault(o=>o.Id==code);
+        var prod=this._DBContext.Images.Where(o=>o.Id==id).ToList();
         return Ok(prod);
     }
 
     
-    [HttpDelete("Remove/(code)")]
-    public IActionResult Remove(int code)
+    [HttpDelete("RemoveById/(id)")]
+    public IActionResult Remove(int id)
     {
-        var prod=this._DBContext.Images.FirstOrDefault(o=>o.Id==code);
+        var prod=this._DBContext.Images.Where(o=>o.Id==id).ToList();
         if(prod!=null){
             this._DBContext.Remove(prod);
             this._DBContext.SaveChanges();
