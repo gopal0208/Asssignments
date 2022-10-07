@@ -21,24 +21,10 @@ public class CategoriesController : ControllerBase
         return Ok(prod);
     }
 
-    [HttpGet("GetbyCode/(code)")]
-    public IActionResult GetbyCode(int code)
+    [HttpGet("GetbyId/(Id)")]
+    public IActionResult GetbyCode(int Id)
     {
-        var prod=this._DBContext.Categories.FirstOrDefault(o=>o.CategoryId==code);
+        var prod=this._DBContext.Categories.FirstOrDefault(o=>o.CategoryId==Id);
         return Ok(prod);
     }
-
-    
-    [HttpDelete("Remove/(code)")]
-    public IActionResult Remove(int code)
-    {
-        var prod=this._DBContext.Categories.FirstOrDefault(o=>o.CategoryId==code);
-        if(prod!=null){
-            this._DBContext.Remove(prod);
-            this._DBContext.SaveChanges();
-            return Ok(true);
-        }
-        return Ok(false);
-    }
-
 }
