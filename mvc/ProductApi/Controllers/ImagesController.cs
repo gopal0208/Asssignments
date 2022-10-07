@@ -27,26 +27,4 @@ public class ImagesController : ControllerBase
         var prod=this._DBContext.Images.Where(o=>o.Id==id).ToList();
         return Ok(prod);
     }
-
-    
-    [HttpDelete("RemoveById/(id)")]
-    public IActionResult Remove(int id)
-    {
-        var prod=this._DBContext.Images.Where(o=>o.Id==id).ToList();
-        if(prod!=null){
-            this._DBContext.Remove(prod);
-            this._DBContext.SaveChanges();
-            return Ok(true);
-        }
-        return Ok(false);
-    }
-
-    
-    [HttpPost("Create")]
-    public IActionResult Create([FromBody] Image _product)
-    {     
-            this._DBContext.Images.Add(_product);
-            this._DBContext.SaveChanges();
-            return Ok(true);
-    }
 }
