@@ -1,7 +1,7 @@
 import React from "react";
 import "./mystyle.css";
 
-function Card({ id, Img, email, firstName, lastName }) {
+function Card({ Img, email, firstName, lastName }) {
   return (
     <div class="card ele">
       <img class="card-img-top img" src={Img} alt="Card img cap" />
