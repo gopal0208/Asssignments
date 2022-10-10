@@ -1,19 +1,13 @@
 .ele {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-  .profile {
-    margin-top: 20px;
-    position: relative;
-  }
-  
-  img {
-    position: relative;
-    height: 250px;
-  }
-  
-  .title {
-    font-weight: bold;
-  }
-  
+  margin-top: 5px;
+  position: relative;
+  width: 18rem;
+  background-color: grey;
+  margin-left: 650px;
+}
+
+.img {
+  height: 12rem;
+  width: 12rem;
+  margin-top: 2rem;
+}
