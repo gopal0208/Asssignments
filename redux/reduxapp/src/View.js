@@ -1,29 +1,29 @@
 import React, { useEffect } from "react";
 import { GethUsers } from "./redux/actions";
 import { connect } from "react-redux";
-import Rep from "./Rep";
+import Card from "./Card";
 
 function View({ GethUsers, user: { users, loading } }) {
   useEffect(() => {
     GethUsers();
   }, [GethUsers]);
 
-  let reps;
+  let cards;
   if (users === null || loading) {
-    reps = <div>Loading</div>;
+    cards = <div>Loading</div>;
   } else {
     console.log(users);
-    reps = users.map((rep) => (
-      <Rep
-        key={rep.id}
-        Img={rep.avatar}
-        email={rep.email}
-        firstName={rep.first_name}
-        lastName={rep.last_name}
+    cards = users.map((card) => (
+      <Card
+        key={card.id}
+        Img={card.avatar}
+        email={card.email}
+        firstName={card.first_name}
+        lastName={card.last_name}
       />
     ));
   }
-  return <div>{reps}</div>;
+  return <div>{cards}</div>;
 }
 
 const mapStateToProps = (state) => ({
