@@ -79,10 +79,7 @@ function App() {
       <form onSubmit={handleSubmit}>
 
         <h1>Sign Up</h1>
-
-        <div className="ui divider"></div>
-        
-        <div className="ui form">
+        <div>
 
           <div className="field">
             <label>Username:</label>
